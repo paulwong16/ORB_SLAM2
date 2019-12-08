@@ -114,6 +114,7 @@ int main(int argc, char **argv)
     cout << "Images in the sequence: " << nImages << endl << endl;
 
     // Main loop
+    std::thread runthread([&]() {
     cv::Mat imLeft, imRight, imLeftRect, imRightRect;
     for(int ni=0; ni<nImages; ni++)
     {
@@ -172,6 +173,13 @@ int main(int argc, char **argv)
     }
 
     // Stop all threads
+    // SLAM.Shutdown();
+    });
+
+    SLAM.StartViewer();
+
+    runthread.join();
+    
     SLAM.Shutdown();
 
     // Tracking time statistics
@@ -186,7 +194,8 @@ int main(int argc, char **argv)
     cout << "mean tracking time: " << totaltime/nImages << endl;
 
     // Save camera trajectory
-    SLAM.SaveTrajectoryTUM("CameraTrajectory.txt");
+    // SLAM.SaveTrajectoryTUM("CameraTrajectory.txt");
+    SLAM.SaveTrajectoryTUM(string(argv[3]) + "/CameraTrajectory.txt");
 
     return 0;
 }

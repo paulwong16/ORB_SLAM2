@@ -20,7 +20,6 @@
 
 #include "Initializer.h"   // IWYU pragma: associated
 
-#include <ext/alloc_traits.h>
 #include <algorithm>
 #include <cmath>
 #include <functional>

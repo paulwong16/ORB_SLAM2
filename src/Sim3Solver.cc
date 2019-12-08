@@ -21,7 +21,6 @@
 
 #include "Sim3Solver.h"   // IWYU pragma: associated
 
-#include <ext/alloc_traits.h>
 #include <opencv2/calib3d.hpp>
 #include <opencv2/core/core_c.h>
 #include <vector>

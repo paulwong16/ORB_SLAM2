@@ -56,18 +56,10 @@
 
 #include "ORBextractor.h"   // IWYU pragma: associated
 
-#include <assert.h>
-#include <ext/alloc_traits.h>
-#include <math.h>
-#include <opencv2/features2d.hpp>
-#include <opencv2/imgproc.hpp>
-#include <vector>
-#include <algorithm>
-#include <cstddef>
-#include <iterator>
-#include <memory>
-#include <type_traits>
-#include <utility>
+#include "MapDrawer.h"
+#include "KeyFrame.h"
+#include <pangolin/pangolin.h>
+#include <mutex>
 
 
 using namespace cv;

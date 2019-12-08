@@ -20,7 +20,6 @@
 
 #include "KeyFrame.h"   // IWYU pragma: associated
 
-#include <ext/alloc_traits.h>
 #include <math.h>
 #include <algorithm>
 #include <list>
